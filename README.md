@@ -44,6 +44,8 @@ It was created for learning purposes and to help people who have difficulties co
 3. Run as root:
     sudo ./fw_iptables.sh
 
+---
+
 ## ⚠️ Warning
 
 If you are connected via SSH, running this script may disconnect you
@@ -52,11 +54,35 @@ This firewall does not handle IPv6
 
 This script is intended for learning and basic setups, not enterprise environments
 
+---
+
+## 💪 Persistence
+
+This script applies firewall rules at runtime.
+
+Firewall rule persistence is distribution-dependent and is NOT handled by this script.
+
+Examples:
+
+### Debian / Ubuntu
+Use iptables-persistent to restore rules at boot.
+
+### Arch Linux
+Create a systemd service using iptables-restore.
+
+### RHEL / CentOS
+Use iptables-services.
+
+Please refer to your distribution documentation for persistence.
+
+---
+
 ## 💾 Saving Rules
+
     The script saves the rules to a file > fw.rules
 
 
 
-This is my first public project
+
 
 
