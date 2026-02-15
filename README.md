@@ -6,6 +6,9 @@ This script blocks all traffic by default and allows only essential outbound con
 It was created for learning purposes and to help people who have difficulties configuring a basic Linux firewall.
 
 
+To use the persistence firewall file, copy it to /etc/systemd/system and enable it using the systemctl command.
+
+
 ---
 
 
@@ -52,6 +55,14 @@ It was created for learning purposes and to help people who have difficulties co
     sudo ./fw_iptables.sh
     ```
 
+4. Persistence file:
+    ```bash
+    cp persistence_firewall.service /etc/systemd/system
+    sudo systemctl daemon-reload
+    sudo systemctl enable persistence_firewall.service
+    ```
+
+Reboot the system to apply configuration.
 
 ---
 
@@ -62,7 +73,7 @@ If you are connected via SSH, running this script may disconnect you
 
 This firewall does not handle IPv6
 
-This script is intended for learning and basic setups, not enterprise environments
+This script is intended for learning and basic setups, not enterprise environments.
 
 
 ---
@@ -93,10 +104,5 @@ Please refer to your distribution documentation for persistence.
 
 ## 💾 Saving Rules
 
-The script saves the rules to a file > fw.rules
-
-
-
-
-
+The script saves the rules to a file named `fw.rules`.
 
