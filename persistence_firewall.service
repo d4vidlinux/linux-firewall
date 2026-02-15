@@ -1,0 +1,15 @@
+[Unit]
+Description= A script to save the fw.rules giving a persistence such with reboot 
+
+[Service]
+Type=simple
+Nice=10
+User=root
+WorkingDirectory=/root
+ExecStartPre=chmod 744 /root/fw_iptables.sh
+ExecStart=/root/fw_iptables.sh
+
+[Install]
+WantedBy=multi-user.target
+
+
