@@ -58,6 +58,7 @@ To use the persistence firewall file, copy it to /etc/systemd/system and enable 
 4. Persistence file:
     ```bash
     cp persistence_firewall.service /etc/systemd/system
+    sudo cp fw_iptables.sh /root
     sudo systemctl daemon-reload
     sudo systemctl enable persistence_firewall.service
     ```
